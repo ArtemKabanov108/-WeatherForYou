@@ -1,0 +1,94 @@
+<style>
+    .thumb-dropdown .dropdown-menu>li {
+        position: relative;
+    }
+
+
+    .thumb-dropdown .dropdown-menu>li>a:hover .thumbnail {
+        display: block;
+    }
+
+    a {
+        color: white;
+        font-size: 18px;
+
+    }
+
+    .log-out {
+        margin-left: 10%;
+    }
+
+    .navbar-form {
+        margin-right: 272px;
+        margin-left: 5px;
+
+    }
+
+    .navbar-brand {
+        display: contents;
+
+    }
+
+    #form-controlWidth {
+        width: 500px;
+
+    }
+
+    .containerNavBar {
+        display: flex;
+        width: auto;
+    }
+
+    .navbar-nav>li>a {
+        margin-left: 115px;
+        margin-top: 9px;
+        padding-top: 7px;
+        padding-bottom: 7px;
+        border-radius: 3px;
+        margin-right: 5px;
+    }
+    .navbar-nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+</style>
+
+<nav class="navbar navbar-dark bg-primary" style="background-color: #009edf;" role="navigation">
+    <div class="containerNavBar">
+        <!-- Brand and toggle get grouped for better mobile display -->
+
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                data-target="#dropdown-thumbnail-preview">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/weatherPage">{{> logoForNavBar}}</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+
+        <div class="collapse navbar-collapse" id="dropdown-thumbnail-preview">
+            <ul class="nav navbar-nav">
+                <li class="active"><a class="link-posistion" href="/favorites">favorites</a></li>
+
+                <form class="navbar-form navbar-left" method="POST" role="search">
+                    <div class="form-group">
+                        <input 
+                        	type="text" 
+                        	name="Search" 
+                        	id="form-controlWidth" 
+                        	class="form-control" 
+                        	placeholder="Search">
+                    </div>
+                    <button class="btn btn-default">Submit</button>
+                </form>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a class="link-posistion" type="button" href="/">Log Out</a></li>
+
+
+</nav>
