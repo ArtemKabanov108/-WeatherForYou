@@ -1,0 +1,34 @@
+version: '3'
+services:
+  db:
+    image: postgres:latest
+    restart: always
+    container_name: express_postgres_db_1
+    environment:
+      - POSTGRES_PASSWORD=postgres
+      - PGDATA=/data/db
+#    volumes:
+#      - ./db_postgres:/data/db
+    ports:
+      - 5432:5432
+
+  api:
+    build:
+      context: ./
+      dockerfile: ./docker/api/Dockerfile
+    restart: always
+    container_name: express_postgres_api_1
+    environment:
+      - NODE_ENV=dev
+      - DB_USER=artemkabanov
+      - DB_PASSWORD=HareKrishna108
+      - DB_HOST=db
+      - DB_DATABASE=nodelogin
+    volumes:
+      - ./src:/home/node/app/src
+    ports:
+      - 9000:9000
+    links:
+      - db
+    depends_on:
+      - db
